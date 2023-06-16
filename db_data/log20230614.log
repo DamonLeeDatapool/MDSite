@@ -1,0 +1,245 @@
+[INFO]: 2023-06-14 16:07:26 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:07:26 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:07:26 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:07:26 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-14 16:07:26 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-14 16:07:26 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-14 16:07:26 - name: DB_USER ,value:root 
+[INFO]: 2023-06-14 16:07:26 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-14 16:07:26 - name: ENVIRONMENT ,value:local 
+[DEBUG]: 2023-06-14 16:07:26 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:07:26 - Database connection established 
+[GIN] 2023/06/14 - 16:07:57 | 200 |            0s |             ::1 | GET      "/ping"
+[GIN] 2023/06/14 - 16:07:57 | 404 |            0s |             ::1 | GET      "/favicon.ico"
+[GIN] 2023/06/14 - 16:08:12 | 404 |            0s |             ::1 | GET      "/api/GetMaintainItemList"
+[GIN] 2023/06/14 - 16:08:25 | 404 |     11.7183ms |             ::1 | GET      "/api/MaintainItemList"
+[GIN] 2023/06/14 - 16:08:36 | 404 |            0s |             ::1 | GET      "/api/"
+[GIN] 2023/06/14 - 16:08:44 | 500 |       4.286ms |             ::1 | GET      "/"
+[GIN] 2023/06/14 - 16:08:53 | 200 |            0s |             ::1 | GET      "/ping"
+[INFO]: 2023-06-14 16:12:21 - system closing step 1 
+[INFO]: 2023-06-14 16:12:21 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:12:22 - Server exiting 
+[INFO]: 2023-06-14 16:12:27 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-14 16:12:27 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-14 16:12:27 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-14 16:12:27 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:12:27 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:12:27 - name: DB_USER ,value:root 
+[INFO]: 2023-06-14 16:12:27 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:12:27 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-14 16:12:27 - name: REDIS_PORT ,value:6379 
+[DEBUG]: 2023-06-14 16:12:27 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:12:27 - Database connection established 
+[GIN] 2023/06/14 - 16:12:40 | 200 |       527.1µs |             ::1 | GET      "/ping"
+[GIN] 2023/06/14 - 16:12:43 | 200 |            0s |             ::1 | GET      "/"
+[GIN] 2023/06/14 - 16:13:28 | 404 |     34.1088ms |             ::1 | GET      "/api/MaintainItemList"
+[GIN] 2023/06/14 - 16:13:34 | 404 |      1.3348ms |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-14 16:15:45 - system closing step 1 
+[INFO]: 2023-06-14 16:15:45 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:15:46 - Server exiting 
+[INFO]: 2023-06-14 16:15:54 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:15:54 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-14 16:15:54 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-14 16:15:54 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-14 16:15:54 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:15:54 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:15:54 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-14 16:15:54 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-14 16:15:54 - name: DB_USER ,value:root 
+[DEBUG]: 2023-06-14 16:15:54 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:15:54 - Database connection established 
+[GIN] 2023/06/14 - 16:16:08 | 404 |     12.2765ms |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-14 16:18:31 - system closing step 1 
+[INFO]: 2023-06-14 16:18:31 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:18:32 - Server exiting 
+[INFO]: 2023-06-14 16:18:36 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-14 16:18:36 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-14 16:18:36 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:18:36 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-14 16:18:36 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-14 16:18:36 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:18:36 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-14 16:18:36 - name: DB_USER ,value:root 
+[INFO]: 2023-06-14 16:18:36 - name: DB_PASSWORD ,value:1234 
+[DEBUG]: 2023-06-14 16:18:36 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:18:37 - Database connection established 
+[GIN] 2023/06/14 - 16:18:49 | 200 |      2.1059ms |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-14 16:35:57 - system closing step 1 
+[INFO]: 2023-06-14 16:35:57 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:35:58 - Server exiting 
+[INFO]: 2023-06-14 16:36:03 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:36:03 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-14 16:36:03 - name: DB_USER ,value:root 
+[INFO]: 2023-06-14 16:36:03 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:36:03 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-14 16:36:03 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:36:03 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-14 16:36:03 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-14 16:36:03 - name: DB_NAME ,value:MDdb 
+[DEBUG]: 2023-06-14 16:36:03 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:36:03 - Database connection established 
+[GIN] 2023/06/14 - 16:36:48 | 200 |      4.8021ms |             ::1 | GET      "/api/MaintainItemList/家具行"
+[GIN] 2023/06/14 - 16:37:03 | 200 |       576.1µs |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-14 16:37:42 - system closing step 1 
+[INFO]: 2023-06-14 16:37:42 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:37:43 - Server exiting 
+[INFO]: 2023-06-14 16:37:48 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-14 16:37:48 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:37:48 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-14 16:37:48 - name: DB_USER ,value:root 
+[INFO]: 2023-06-14 16:37:48 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:37:48 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-14 16:37:48 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-14 16:37:48 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:37:48 - name: DB_HOST ,value:localhost 
+[DEBUG]: 2023-06-14 16:37:48 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:37:48 - Database connection established 
+[GIN] 2023/06/14 - 16:37:56 | 200 |      2.0902ms |             ::1 | GET      "/api/MaintainItemList"
+[GIN] 2023/06/14 - 16:38:04 | 200 |       950.4µs |             ::1 | GET      "/api/MaintainItemList"
+[GIN] 2023/06/14 - 16:38:05 | 200 |       624.8µs |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-14 16:42:52 - system closing step 1 
+[INFO]: 2023-06-14 16:42:52 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:42:53 - Server exiting 
+[INFO]: 2023-06-14 16:42:58 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-14 16:42:58 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-14 16:42:58 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-14 16:42:58 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-14 16:42:58 - name: DB_USER ,value:root 
+[INFO]: 2023-06-14 16:42:58 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:42:58 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-14 16:42:58 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-14 16:42:58 - name: USE_PORT ,value:8080 
+[DEBUG]: 2023-06-14 16:42:58 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-14 16:42:58 - Database connection established 
+[GIN] 2023/06/14 - 16:43:07 | 200 |       508.5µs |             ::1 | GET      "/api/MaintainItemList"
+[GIN] 2023/06/14 - 16:43:20 | 200 |      1.3485ms |             ::1 | GET      "/api/MaintainItemList/廚房設備商"
+[INFO]: 2023-06-14 16:51:15 - system closing step 1 
+[INFO]: 2023-06-14 16:51:15 - timeout of 1 seconds. 
+[INFO]: 2023-06-14 16:51:16 - Server exiting 
+[INFO]: 2023-06-15 16:43:09 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 16:43:09 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 16:43:09 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 16:43:09 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 16:43:09 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-15 16:43:09 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 16:43:09 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-15 16:43:09 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 16:43:09 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[DEBUG]: 2023-06-15 16:43:09 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 16:43:09 - Database connection established 
+[GIN] 2023/06/15 - 16:44:30 | 200 |     20.2192ms |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-15 16:45:26 - system closing step 1 
+[INFO]: 2023-06-15 16:45:26 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 16:45:27 - Server exiting 
+[INFO]: 2023-06-15 16:49:28 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-15 16:49:28 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 16:49:28 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 16:49:28 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 16:49:28 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 16:49:28 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 16:49:28 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 16:49:28 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 16:49:28 - name: DB_NAME ,value:MDdb 
+[DEBUG]: 2023-06-15 16:49:28 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 16:49:28 - Database connection established 
+[INFO]: 2023-06-15 16:49:49 - create maintain_order error: Error 1054 (42S22): Unknown column 'create_time' in 'field list' 
+[GIN] 2023/06/15 - 16:49:49 | 404 |     19.5434ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[INFO]: 2023-06-15 16:51:10 - system closing step 1 
+[INFO]: 2023-06-15 16:51:10 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 16:51:11 - Server exiting 
+[INFO]: 2023-06-15 16:53:58 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-15 16:53:58 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 16:53:58 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 16:53:58 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 16:53:58 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 16:53:58 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 16:53:58 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 16:53:58 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-15 16:53:58 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[DEBUG]: 2023-06-15 16:53:58 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 16:53:58 - Database connection established 
+[GIN] 2023/06/15 - 16:54:19 | 500 |     40.2977ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[GIN] 2023/06/15 - 16:54:26 | 200 |      1.6648ms |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-15 16:58:51 - system closing step 1 
+[INFO]: 2023-06-15 16:58:51 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 16:58:52 - Server exiting 
+[INFO]: 2023-06-15 16:58:57 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 16:58:57 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 16:58:57 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 16:58:57 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-15 16:58:57 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 16:58:57 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 16:58:57 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 16:58:57 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 16:58:57 - name: DB_PORT ,value:3306 
+[DEBUG]: 2023-06-15 16:58:57 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 16:58:57 - Database connection established 
+[GIN] 2023/06/15 - 16:59:41 | 500 |     72.8632ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[INFO]: 2023-06-15 17:03:44 - system closing step 1 
+[INFO]: 2023-06-15 17:03:44 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 17:03:45 - Server exiting 
+[INFO]: 2023-06-15 17:04:42 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-15 17:04:42 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 17:04:42 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-15 17:04:42 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 17:04:42 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 17:04:42 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 17:04:42 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 17:04:42 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 17:04:42 - name: DB_PASSWORD ,value:1234 
+[DEBUG]: 2023-06-15 17:04:42 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 17:04:42 - Database connection established 
+[GIN] 2023/06/15 - 17:04:55 | 200 |      3.5258ms |             ::1 | GET      "/api/MaintainItemList"
+[INFO]: 2023-06-15 17:04:58 - pexels-negative-space-169573.jpg 
+[INFO]: 2023-06-15 17:04:58 - create maintain_order error: Error 1054 (42S22): Unknown column 'file_name' in 'field list' 
+[GIN] 2023/06/15 - 17:04:58 | 404 |     58.4841ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[INFO]: 2023-06-15 17:06:03 - system closing step 1 
+[INFO]: 2023-06-15 17:06:03 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 17:06:04 - Server exiting 
+[INFO]: 2023-06-15 17:12:55 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 17:12:55 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 17:12:55 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 17:12:55 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 17:12:55 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 17:12:55 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-15 17:12:55 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 17:12:55 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 17:12:55 - name: DB_PORT ,value:3306 
+[DEBUG]: 2023-06-15 17:12:55 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 17:12:55 - Database connection established 
+[INFO]: 2023-06-15 17:13:12 - pexels-negative-space-169573.jpg 
+[GIN] 2023/06/15 - 17:13:12 | 200 |     20.4558ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[INFO]: 2023-06-15 17:21:12 - system closing step 1 
+[INFO]: 2023-06-15 17:21:12 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 17:21:14 - Server exiting 
+[INFO]: 2023-06-15 17:21:25 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 17:21:25 - name: DB_NAME ,value:MDdb 
+[INFO]: 2023-06-15 17:21:25 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-15 17:21:25 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 17:21:25 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 17:21:25 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 17:21:25 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 17:21:25 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 17:21:25 - name: DB_PASSWORD ,value:1234 
+[DEBUG]: 2023-06-15 17:21:25 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 17:21:25 - Database connection established 
+[INFO]: 2023-06-15 17:21:39 - pexels-negative-space-169573.jpg 
+[GIN] 2023/06/15 - 17:21:39 | 200 |     49.7566ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[INFO]: 2023-06-15 17:26:47 - system closing step 1 
+[INFO]: 2023-06-15 17:26:47 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 17:26:48 - Server exiting 
+[INFO]: 2023-06-15 17:26:54 - name: REDIS_PORT ,value:6379 
+[INFO]: 2023-06-15 17:26:54 - name: MYSQL_ROOT_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 17:26:54 - name: DB_USER ,value:root 
+[INFO]: 2023-06-15 17:26:54 - name: DB_PASSWORD ,value:1234 
+[INFO]: 2023-06-15 17:26:54 - name: DB_HOST ,value:localhost 
+[INFO]: 2023-06-15 17:26:54 - name: DB_PORT ,value:3306 
+[INFO]: 2023-06-15 17:26:54 - name: USE_PORT ,value:8080 
+[INFO]: 2023-06-15 17:26:54 - name: ENVIRONMENT ,value:local 
+[INFO]: 2023-06-15 17:26:54 - name: DB_NAME ,value:MDdb 
+[DEBUG]: 2023-06-15 17:26:54 - root:1234@tcp(localhost:3306)/MDdb?charset=utf8&parseTime=True&loc=Local 
+[INFO]: 2023-06-15 17:26:54 - Database connection established 
+[GIN] 2023/06/15 - 17:27:17 | 200 |     91.9358ms |             ::1 | POST     "/api/CreateMaintainOrder"
+[INFO]: 2023-06-15 17:28:41 - system closing step 1 
+[INFO]: 2023-06-15 17:28:41 - timeout of 1 seconds. 
+[INFO]: 2023-06-15 17:28:42 - Server exiting 
