@@ -26,8 +26,8 @@ func main() {
 	defer config.CloseDatabase()
 	//config.DB.AutoMigrate(&models.User{})
 
-	config.RedisClient = config.NewRedisClient()
-	defer config.RedisClient.Close()
+	//config.RedisClient = config.NewRedisClient()
+	//defer config.RedisClient.Close()
 
 	router := initRouter.SetupRouter()
 	router.Static("/static", "./static")

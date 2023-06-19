@@ -8,15 +8,18 @@ import (
 )
 
 type User struct {
-	Id         uint   `json:"id"`
-	Name       string `json:"name"`
-	Email      string `json:"email"`
-	Pwd        string `json:"pwd"`
-	CreateTime string `json:"createtime"`
+	Id           uint   `json:"id" gorm:"cloumn:User_Id; primaryKey"`
+	UserAccount  string `json:"user_account" gorm:"column:User_Account"`
+	userPassword string `json:"user_password" gorm:"column:User_Password"`
+	userName     string `json:"user_name gorm:"column:User_Name"`
+	userPhone    string `json:"user_phone gorm:"column:User_Phone"`
+	StoreId      int    `json:"store_id gorm:"column:Store_Id"`
+	CreateTime   int64  `json:"createtime" gorm:"column:CreateTime"`
+	UpdateTime   int64  `json:"updatetime" gorm:"column:UpdateTime"`
 }
 
 func (u *User) TableName() string {
-	return "User"
+	return "users"
 }
 
 func GetAllUser(user *[]User) (err error) {

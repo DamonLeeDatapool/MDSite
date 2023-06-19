@@ -2,3 +2,4 @@
 go.mod
 go.sum
 static/pic/
+*.log

@@ -44,7 +44,7 @@ func SetupRouter() *gin.Engine {
 		grpAPI.GET("MaintainOrderList", handler.GetMaintainOrderAll)
 		//grpAPI.GET("MaintainOrderSolvedList", handler.GetMaintainOrderSolvedList)
 		//grpAPI.GET("MaintainOrderHandlingList", handler.GetMaintainOrderHandlingList)
-		//grpAPI.GET("MaintainOrder/:id", handler.GetMaintainOrderById)
+		grpAPI.GET("MaintainOrder/:id", handler.GetMaintainOrderById)
 	}
 
 	return router

@@ -49,6 +49,46 @@ type MaintainOrder struct {
 	UpdateTime      int64     `json:"updatetime" gorm:"column:UpdateTime"`
 }
 
+type MaintainOrderInfoReturnToFront struct {
+	MaintainOrderId   int    `json:"maintainOrderId"`
+	MaintainItemName  string `json:"maintainItemName"`
+	FixerType         string `json:"fixerType"`
+	OrderStatus       int    `json:"orderStatus"`
+	OrderStatusString string `json:"orderStatusString"`
+	CreateTime        int64  `json:"createTime"`
+	TimeElpased       int    `json:"timeElasped` //CreateTime後經過幾小時
+	OvertimeStatue    string `json:"overtimeStatus"`
+}
+
+type MaintainOrderDetailInfoReturnToFront struct {
+	MaintainOrderId   int       `json:"maintainOrderId"`
+	MaintainItemName  string    `json:"maintainItemName"`
+	UserName          string    `json:"userName"`
+	UserPhone         string    `json:"userPhone"`
+	AppointDate       time.Time `json:"appointDate"`
+	AppointTime       int       `json:"appointTime"`
+	AppointTimeString string    `json:"appointTimeString"`
+	Comment           string    `json:"comment"`
+	//OrderStatusNo    int    `json:"orderStatusNo"`
+	//OrderStatus      string `json:"orderStatus"`
+	PicUrl string `json:"picUrl`
+	//CreateTime       int    `json:"createTime"`
+	//TimeElpased      int    `json:"timeElasped` //CreateTime後經過幾小時
+	//OvertimeStatue   int    `json:"overtimeStatus"`
+}
+
+var AppointTimeMapping = map[int]string{
+	0: "早上",
+	1: "下午",
+	2: "晚上",
+}
+
+var OrderStatusMapping = map[int]string{
+	0: "預約中",
+	1: "處理中",
+	2: "已解決",
+}
+
 func (u *MaintainOrder) TableName() string {
 	return "maintain_order"
 }
@@ -60,12 +100,74 @@ func GetAllMaintainOrderWithLimit(MOItem *[]MaintainOrder, limit int) (err error
 	return nil
 }
 
+func GetAllMaintainOrderWithLimitForFront(MOExtItem *[]MaintainOrderInfoReturnToFront, limit int) (err error) {
+
+	fields := `
+	maintain_order.Maintain_Order_Id AS maintain_order_id,
+	maintain_item.Name AS maintain_item_name, 
+	maintain_item.Fixer_Type AS fixer_type, 
+	maintain_order.CreateTime AS create_time, 
+	maintain_order.Status AS order_status 	
+	`
+
+	if err = config.DB.Table("maintain_order").Select(fields).
+		Joins("left join maintain_item on maintain_order.Maintain_Item_Id = maintain_item.Id").
+		Order("create_time desc").Limit(limit).Scan(MOExtItem).Error; err != nil {
+		return err
+	}
+
+	for i := 0; i < len(*MOExtItem); i++ {
+		(*MOExtItem)[i].OrderStatusString = OrderStatusMapping[(*MOExtItem)[i].OrderStatus]
+		TimeElpasedSeconds := time.Now().Unix() - (*MOExtItem)[i].CreateTime
+		(*MOExtItem)[i].TimeElpased = int(TimeElpasedSeconds / 3600)
+		if (*MOExtItem)[i].TimeElpased > 48 && (*MOExtItem)[i].OrderStatus == 0 {
+			(*MOExtItem)[i].OvertimeStatue = "已超時"
+		} else if (*MOExtItem)[i].TimeElpased > 24 && (*MOExtItem)[i].OrderStatus == 0 {
+			(*MOExtItem)[i].OvertimeStatue = "即將超時"
+		} else {
+			(*MOExtItem)[i].OvertimeStatue = "符合規定"
+		}
+	}
+
+	return nil
+}
+
+func GetOneMaintainOrderWithLimitForFront(MOExtItem *MaintainOrderDetailInfoReturnToFront, id int) (err error) {
+
+	fields := `
+	maintain_order.Maintain_Order_Id AS maintain_order_id, 
+	maintain_item.Name AS maintain_item_name, 
+	users.User_Name AS user_name,
+	users.User_Phone AS user_phone,
+	maintain_order.Appoint_Date AS appoint_date,
+	maintain_order.Appoint_Time AS appoint_time,
+	maintain_order.Comment AS comment,
+	maintain_order_file.FilePath AS pic_url	
+	`
+
+	if err = config.DB.Table("maintain_order").Select(fields).
+		Joins("left join maintain_item on maintain_order.Maintain_Item_Id = maintain_item.Id").
+		Joins("left join maintain_order_file on maintain_order.Maintain_Order_Id = maintain_order_file.Maintain_Order_Id").
+		Joins("left join users on maintain_order.User_Id = users.User_Id").
+		Where("maintain_order.Maintain_Order_Id = ? ", id).Scan(MOExtItem).Error; err != nil {
+		return err
+	}
+
+	MOExtItem.AppointTimeString = AppointTimeMapping[MOExtItem.AppointTime]
+	return nil
+}
+
 func CreateMaintainOrder(mo *MaintainOrder) (id int, err error) {
 	if err = config.DB.Create(mo).Error; err != nil {
 		return 0, err
 	}
 
 	return mo.MaintainOrderId, nil
+}
+
+func DeleteMaintainorder(mo *MaintainOrder, id int) (err error) {
+	config.DB.Where("Maintain_Order_Id = ?", id).Delete(mo)
+	return nil
 }
 
 // MaintainOrderFile

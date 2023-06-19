@@ -38,14 +38,28 @@ func GetMaintainItemListByFT(c *gin.Context) {
 
 // Maintain_Order
 func GetMaintainOrderAll(c *gin.Context) {
-	var mo []models.MaintainOrder
-	err := models.GetAllMaintainOrderWithLimit(&mo, 50) //limit=50 ,暫時先寫
+	//var mo []models.MaintainOrder
+	var moExt []models.MaintainOrderInfoReturnToFront
+	err := models.GetAllMaintainOrderWithLimitForFront(&moExt, 50) //limit=50 ,暫時先寫
 	if err != nil {
 		config.Logger.Println("get maintain_order error:", err)
 		c.AbortWithStatus(http.StatusNotFound)
 	}
 
-	c.JSON(http.StatusOK, mo)
+	c.JSON(http.StatusOK, moExt)
+
+}
+
+func GetMaintainOrderById(c *gin.Context) {
+	var moExt models.MaintainOrderDetailInfoReturnToFront
+	id, _ := strconv.Atoi(c.Params.ByName("id"))
+	err := models.GetOneMaintainOrderWithLimitForFront(&moExt, id) //limit=50 ,暫時先寫
+	if err != nil {
+		config.Logger.Printf("get maintain_order error:%v , order_id:%v", err, id)
+		c.AbortWithStatus(http.StatusNotFound)
+	}
+
+	c.JSON(http.StatusOK, moExt)
 
 }
 
@@ -57,7 +71,7 @@ func CreateMaintainOrder(c *gin.Context) {
 	tempValue, _ := strconv.Atoi(c.PostForm("appoint_time"))
 	mo.AppointTime = int8(tempValue)
 	mo.Location = c.PostForm("location")
-	mo.Comment = c.PostForm("Comment")
+	mo.Comment = c.PostForm("comment")
 	mo.Status = 0
 	mo.CreateTime = time.Now().Unix()
 	mo.UpdateTime = mo.CreateTime
@@ -71,6 +85,15 @@ func CreateMaintainOrder(c *gin.Context) {
 	//存file
 	var moFile models.MaintainOrderFile
 	file, _ := c.FormFile("file")
+	if file == nil {
+		config.Logger.Println("圖片沒上傳")
+		err := models.DeleteMaintainorder(&mo, id)
+		if err != nil {
+			config.Logger.Printf("刪除maintain_order失敗, err=%v", err)
+		}
+		c.String(http.StatusBadRequest, "上傳圖片失敗")
+		return
+	}
 	ext := filepath.Ext(file.Filename)
 	path := "static/pic/" + strconv.Itoa(id) + "/"
 	fileName := uuid.New().String() + ext
