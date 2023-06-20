@@ -42,8 +42,8 @@ func SetupRouter() *gin.Engine {
 		grpAPI.GET("MaintainItemList/:ft", handler.GetMaintainItemListByFT)
 		grpAPI.POST("CreateMaintainOrder", handler.CreateMaintainOrder)
 		grpAPI.GET("MaintainOrderList", handler.GetMaintainOrderAll)
-		//grpAPI.GET("MaintainOrderSolvedList", handler.GetMaintainOrderSolvedList)
-		//grpAPI.GET("MaintainOrderHandlingList", handler.GetMaintainOrderHandlingList)
+		grpAPI.GET("MaintainOrderSolvedList", handler.GetMaintainOrderSolved)
+		grpAPI.GET("MaintainOrderHandlingList", handler.GetMaintainOrderHandling)
 		grpAPI.GET("MaintainOrder/:id", handler.GetMaintainOrderById)
 	}
 

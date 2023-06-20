@@ -50,6 +50,32 @@ func GetMaintainOrderAll(c *gin.Context) {
 
 }
 
+func GetMaintainOrderSolved(c *gin.Context) {
+	//var mo []models.MaintainOrder
+	var moExt []models.MaintainOrderInfoReturnToFront
+	err := models.GetMaintainOrderStatusForFront(&moExt, 2) //status=2 ,已解決
+	if err != nil {
+		config.Logger.Println("get maintain_order Solved error:", err)
+		c.AbortWithStatus(http.StatusNotFound)
+	}
+
+	c.JSON(http.StatusOK, moExt)
+
+}
+
+func GetMaintainOrderHandling(c *gin.Context) {
+	//var mo []models.MaintainOrder
+	var moExt []models.MaintainOrderInfoReturnToFront
+	err := models.GetMaintainOrderStatusForFront(&moExt, 1) //status=1 ,已接單
+	if err != nil {
+		config.Logger.Println("get maintain_order Solved error:", err)
+		c.AbortWithStatus(http.StatusNotFound)
+	}
+
+	c.JSON(http.StatusOK, moExt)
+
+}
+
 func GetMaintainOrderById(c *gin.Context) {
 	var moExt models.MaintainOrderDetailInfoReturnToFront
 	id, _ := strconv.Atoi(c.Params.ByName("id"))

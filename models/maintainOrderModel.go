@@ -2,6 +2,7 @@ package models
 
 import (
 	"time"
+
 	//"fmt"
 
 	"MServer/config"
@@ -56,8 +57,9 @@ type MaintainOrderInfoReturnToFront struct {
 	OrderStatus       int    `json:"orderStatus"`
 	OrderStatusString string `json:"orderStatusString"`
 	CreateTime        int64  `json:"createTime"`
+	CreateTimeString  string `json:"createTimeString"`
 	TimeElpased       int    `json:"timeElasped` //CreateTime後經過幾小時
-	OvertimeStatue    string `json:"overtimeStatus"`
+	OvertimeStatus    string `json:"overtimeStatus"`
 }
 
 type MaintainOrderDetailInfoReturnToFront struct {
@@ -116,20 +118,52 @@ func GetAllMaintainOrderWithLimitForFront(MOExtItem *[]MaintainOrderInfoReturnTo
 		return err
 	}
 
+	MaintainOrderPostProcess(MOExtItem)
+
+	return nil
+}
+
+func GetMaintainOrderStatusForFront(MOExtItem *[]MaintainOrderInfoReturnToFront, status int) (err error) {
+
+	fields := `
+	maintain_order.Maintain_Order_Id AS maintain_order_id,
+	maintain_item.Name AS maintain_item_name, 
+	maintain_item.Fixer_Type AS fixer_type, 
+	maintain_order.CreateTime AS create_time, 
+	maintain_order.Status AS order_status 	
+	`
+
+	if err = config.DB.Table("maintain_order").Select(fields).
+		Joins("left join maintain_item on maintain_order.Maintain_Item_Id = maintain_item.Id").
+		Where("Status = ?", status).
+		Order("create_time desc").Scan(MOExtItem).Error; err != nil {
+		return err
+	}
+
+	MaintainOrderPostProcess(MOExtItem)
+
+	return nil
+}
+
+func MaintainOrderPostProcess(MOExtItem *[]MaintainOrderInfoReturnToFront) {
+
 	for i := 0; i < len(*MOExtItem); i++ {
+		//OrdetStatusString
 		(*MOExtItem)[i].OrderStatusString = OrderStatusMapping[(*MOExtItem)[i].OrderStatus]
+		//OverTimeStattus
 		TimeElpasedSeconds := time.Now().Unix() - (*MOExtItem)[i].CreateTime
 		(*MOExtItem)[i].TimeElpased = int(TimeElpasedSeconds / 3600)
 		if (*MOExtItem)[i].TimeElpased > 48 && (*MOExtItem)[i].OrderStatus == 0 {
-			(*MOExtItem)[i].OvertimeStatue = "已超時"
+			(*MOExtItem)[i].OvertimeStatus = "已超時"
 		} else if (*MOExtItem)[i].TimeElpased > 24 && (*MOExtItem)[i].OrderStatus == 0 {
-			(*MOExtItem)[i].OvertimeStatue = "即將超時"
+			(*MOExtItem)[i].OvertimeStatus = "即將超時"
 		} else {
-			(*MOExtItem)[i].OvertimeStatue = "符合規定"
+			(*MOExtItem)[i].OvertimeStatus = "符合規定"
 		}
+		//CreateTimeString
+		(*MOExtItem)[i].CreateTimeString = time.Unix((*MOExtItem)[i].CreateTime, 0).Format("2006-01-02 15:04:05")
 	}
 
-	return nil
 }
 
 func GetOneMaintainOrderWithLimitForFront(MOExtItem *MaintainOrderDetailInfoReturnToFront, id int) (err error) {
